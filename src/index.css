@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-accent: #FFFFFF;
+  --color-accent-light: #F2F2F2;
+  --color-accent-dark: #A6A6A6;
+  --color-matte-black: #1A1A1A;
+  --color-deep-black: #0D0D0D;
+}
+
+@layer base {
+  body {
+    @apply bg-deep-black text-white selection:bg-white selection:text-black font-sans antialiased overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-white;
+  }
+}
+
+@utility accent-gradient {
+  background: linear-gradient(135deg, #A6A6A6 0%, #FFFFFF 50%, #F2F2F2 100%);
+}
+
+@utility accent-text {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, #A6A6A6 0%, #FFFFFF 50%, #F2F2F2 100%);
+}
+
+@utility editorial-title {
+  @apply font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.85] tracking-[-0.04em] uppercase;
+}
+
+@utility micro-label {
+  @apply text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50 font-display;
+}
+
+@utility luxury-border {
+  @apply border border-white/10 hover:border-white/30 transition-all duration-500;
+}
+
+@utility luxury-card {
+  @apply bg-[#0A0A0A] border border-white/5 rounded-none overflow-hidden transition-all duration-700 hover:border-white/20;
+}
+
+@utility btn-accent {
+  @apply bg-white text-black font-bold py-3 px-8 sm:py-4 sm:px-10 rounded-none transition-all duration-300 hover:bg-white/90 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-widest text-[10px] sm:text-xs font-display;
+}
+
+@utility btn-outline-accent {
+  @apply border border-white text-white font-bold py-3 px-8 sm:py-4 sm:px-10 rounded-none transition-all duration-300 hover:bg-white hover:text-black active:scale-95 uppercase tracking-widest text-[10px] sm:text-xs font-display;
+}
+
+@utility glass-panel {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-deep-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full hover:bg-white/40;
+}

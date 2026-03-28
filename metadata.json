@@ -1,0 +1,8 @@
+{
+  "name": "LuxoBD",
+  "description": "Premium luxury clothing brand eCommerce website with a modern black and white aesthetic.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
